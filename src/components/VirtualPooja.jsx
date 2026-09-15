@@ -133,26 +133,26 @@ export default function VirtualPooja({ onClose }) {
         </button>
 
         {/* Idol Divine Silhouette & Glowing Aura */}
-        <div className="relative mt-14 mb-2 flex flex-col items-center">
+        <div className="relative mt-14 mb-2 flex flex-col items-center w-full">
           {/* Pulsing Golden Aura */}
-          <div className="absolute -inset-5 rounded-full bg-gradient-to-tr from-amber-400/30 via-orange-500/25 to-yellow-400/30 blur-xl animate-aura pointer-events-none"></div>
+          <div className="absolute -inset-4 rounded-full bg-gradient-to-tr from-amber-400/30 via-orange-500/25 to-yellow-400/30 blur-xl animate-aura pointer-events-none"></div>
 
-          <div className="relative w-44 h-48 rounded-2xl overflow-hidden border-3 border-amber-400 shadow-2xl shadow-amber-900/20 bg-white">
+          <div className="relative w-48 h-56 sm:w-52 sm:h-60 rounded-2xl overflow-hidden border-3 border-amber-400 shadow-2xl shadow-amber-900/20 bg-stone-900 mx-auto">
             <img 
               src="/village-ganesh-idol.jpg" 
               alt="Lord Ganesha - Club Friends Youth" 
-              className="w-full h-full object-cover object-bottom"
+              className="w-full h-full object-cover object-[50%_62%]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent pointer-events-none"></div>
             
             {/* Village Idol Badge */}
-            <div className="absolute top-2 right-2 bg-gradient-to-r from-red-600 to-orange-600 text-white text-[10px] px-2 py-0.5 rounded-full font-bold border border-white/80 shadow-md">
+            <div className="absolute top-2 right-2 bg-gradient-to-r from-red-600 to-orange-600 text-white text-[10px] px-2 py-0.5 rounded-full font-bold border border-white/80 shadow-md pointer-events-none">
               Pipri Pandal
             </div>
           </div>
 
           {/* Diya Glow Positioned Below Idol */}
-          <div className="flex items-center gap-6 mt-3">
+          <div className="flex items-center justify-center gap-4 sm:gap-6 mt-3 w-full">
             {/* Left Diya */}
             <div className={`transition-all duration-300 ${isDiyaLit ? 'opacity-100 scale-105' : 'opacity-30'}`}>
               <div className="relative flex flex-col items-center">
@@ -164,11 +164,11 @@ export default function VirtualPooja({ onClose }) {
             </div>
 
             {/* Sacred Mantra display */}
-            <div className="text-center px-3 py-1 rounded-xl bg-white/90 border border-amber-300 shadow-sm">
+            <div className="text-center px-3 py-1 rounded-xl bg-white/95 border border-amber-300 shadow-sm">
               <p className="text-xs font-serif text-[#7c2d12] font-black tracking-wider">
                 ॥ ॐ శ్రీ గణేశాయ నమః ॥
               </p>
-              <p className="text-[10px] text-amber-800 font-semibold">
+              <p className="text-[10px] text-amber-800 font-bold">
                 Om Gam Ganapataye Namaha
               </p>
             </div>
