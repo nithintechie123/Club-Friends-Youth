@@ -13,14 +13,14 @@ export default function EventsSection() {
 
   const getCategoryIcon = (cat) => {
     switch (cat.toLowerCase()) {
-      case 'pooja': return <Flame className="w-4 h-4 text-orange-400" />;
-      case 'annadanam': return <Utensils className="w-4 h-4 text-emerald-400" />;
+      case 'pooja': return <Flame className="w-4 h-4 text-orange-600" />;
+      case 'annadanam': return <Utensils className="w-4 h-4 text-emerald-600" />;
       case 'cultural': 
-      case 'music': return <Music className="w-4 h-4 text-purple-400" />;
+      case 'music': return <Music className="w-4 h-4 text-purple-600" />;
       case 'competition':
-      case 'sports': return <Trophy className="w-4 h-4 text-yellow-400" />;
-      case 'auction': return <Sparkles className="w-4 h-4 text-amber-400" />;
-      default: return <Tag className="w-4 h-4 text-amber-400" />;
+      case 'sports': return <Trophy className="w-4 h-4 text-amber-600" />;
+      case 'auction': return <Sparkles className="w-4 h-4 text-yellow-600" />;
+      default: return <Tag className="w-4 h-4 text-amber-600" />;
     }
   };
 
@@ -35,25 +35,25 @@ export default function EventsSection() {
       {/* Section Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-amber-300 to-yellow-100 font-['Cinzel',serif]">
+          <h2 className="text-lg font-black text-[#7c2d12] font-['Cinzel',serif]">
             Festival Activities & Events
           </h2>
-          <p className="text-[11px] text-amber-200 font-medium">
+          <p className="text-[11px] text-amber-900 font-semibold">
             Maha Annadanam (20/09/2026), Harati, Cultural & Visarjan Schedule
           </p>
         </div>
       </div>
 
-      {/* Category Filter Pills (Horizontal Scroll with Vibrant Colors) */}
+      {/* Category Filter Pills (Horizontal Scroll with Bright Colors) */}
       <div className="flex gap-2 overflow-x-auto pb-1.5 no-scrollbar">
         {categories.map((cat) => (
           <button
             key={cat}
             onClick={() => setSelectedCategory(cat)}
-            className={`flex-shrink-0 text-xs px-3.5 py-1.5 rounded-full font-bold transition-all shadow-md ${
+            className={`flex-shrink-0 text-xs px-3.5 py-1.5 rounded-full font-extrabold transition-all shadow-sm ${
               selectedCategory === cat
-                ? 'bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-500 text-stone-950 border-2 border-white scale-105 shadow-amber-500/50'
-                : 'bg-[#220906] text-amber-200 border border-amber-400/30 hover:border-yellow-300'
+                ? 'bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-md scale-105 border-1.5 border-amber-300'
+                : 'bg-white text-amber-900 border-1.5 border-amber-200 hover:border-amber-400 hover:bg-amber-50'
             }`}
           >
             {cat}
@@ -64,7 +64,7 @@ export default function EventsSection() {
       {/* Event Cards List */}
       <div className="space-y-3">
         {filteredEvents.length === 0 ? (
-          <div className="text-center py-8 festive-card rounded-2xl text-amber-200 text-xs">
+          <div className="text-center py-8 bg-white border border-amber-200 rounded-2xl text-amber-800 text-xs">
             No events found for this filter.
           </div>
         ) : (
@@ -75,25 +75,25 @@ export default function EventsSection() {
             return (
               <div
                 key={event.id}
-                className={`relative rounded-2xl p-4 border-2 transition-all shadow-xl ${
+                className={`relative rounded-3xl p-4 border-2 transition-all shadow-md ${
                   isLive
-                    ? 'bg-gradient-to-br from-[#38110b] via-[#240905] to-[#1c0604] border-yellow-300 shadow-orange-950/70 ring-2 ring-yellow-400/40'
+                    ? 'bg-gradient-to-br from-amber-50 via-white to-orange-50 border-orange-400 shadow-orange-900/10 ring-2 ring-orange-400/30'
                     : isCompleted
-                    ? 'bg-[#1b0604]/90 border-amber-400/25 opacity-90'
-                    : 'bg-gradient-to-br from-[#290d09] to-[#1c0604] border-amber-400/50 hover:border-yellow-300'
+                    ? 'bg-white/80 border-stone-200 opacity-90'
+                    : 'bg-white border-amber-200 hover:border-amber-400 hover:shadow-lg'
                 }`}
               >
                 {/* Event Card Header */}
                 <div className="flex items-start justify-between gap-2">
                   <div className="flex items-center gap-2.5">
-                    <span className="p-2 rounded-xl bg-black/60 border border-amber-400/30 shadow-md">
+                    <span className="p-2 rounded-xl bg-amber-50 border border-amber-200 shadow-sm">
                       {getCategoryIcon(event.category)}
                     </span>
                     <div>
-                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-yellow-400">
+                      <span className="text-[10px] font-black uppercase tracking-wider text-orange-700">
                         {event.badge} • Day {event.day}
                       </span>
-                      <h3 className="text-sm font-extrabold text-amber-100 font-['Cinzel',serif] mt-0.5">
+                      <h3 className="text-sm font-black text-[#431407] font-['Cinzel',serif] mt-0.5">
                         {event.title}
                       </h3>
                     </div>
@@ -103,10 +103,10 @@ export default function EventsSection() {
                   <span
                     className={`text-[10px] font-extrabold px-2.5 py-0.5 rounded-full border shadow-sm ${
                       isLive
-                        ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white border-yellow-300 animate-pulse'
+                        ? 'bg-gradient-to-r from-red-600 to-orange-600 text-white border-white animate-pulse'
                         : isCompleted
-                        ? 'bg-emerald-950 text-emerald-300 border-emerald-500/60'
-                        : 'bg-amber-950 text-yellow-300 border-yellow-400/60'
+                        ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
+                        : 'bg-amber-100 text-amber-900 border-amber-300'
                     }`}
                   >
                     {event.status}
@@ -114,26 +114,26 @@ export default function EventsSection() {
                 </div>
 
                 {/* Event Description */}
-                <p className="text-xs text-amber-100 font-medium mt-2.5 leading-relaxed">
+                <p className="text-xs text-[#2b0d06] font-medium mt-2.5 leading-relaxed">
                   {event.description}
                 </p>
 
                 {/* Time, Venue & Action Footer */}
-                <div className="mt-3 pt-2.5 border-t border-amber-400/20 flex items-center justify-between text-xs">
-                  <div className="flex flex-col gap-1 text-[11px] text-amber-200">
+                <div className="mt-3 pt-2.5 border-t border-amber-100 flex items-center justify-between text-xs">
+                  <div className="flex flex-col gap-1 text-[11px] text-amber-900">
                     <div className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-yellow-300" />
-                      <span className="font-extrabold text-white">{event.time}</span>
+                      <Clock className="w-3.5 h-3.5 text-orange-600" />
+                      <span className="font-extrabold text-[#7c2d12]">{event.time}</span>
                     </div>
                     <div className="flex items-center gap-1.5">
-                      <MapPin className="w-3.5 h-3.5 text-red-400" />
-                      <span className="text-amber-200/90 font-medium">{event.location}</span>
+                      <MapPin className="w-3.5 h-3.5 text-red-600" />
+                      <span className="text-[#431407] font-semibold">{event.location}</span>
                     </div>
                   </div>
 
                   <button
                     onClick={() => shareEvent(event)}
-                    className="flex items-center gap-1 bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white border border-emerald-300/40 text-[11px] font-extrabold px-3 py-1.5 rounded-xl shadow-md transition-all active:scale-95"
+                    className="flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white border border-emerald-400 text-[11px] font-extrabold px-3 py-1.5 rounded-xl shadow-sm transition-all active:scale-95"
                     title="Share on WhatsApp"
                   >
                     <Share2 className="w-3.5 h-3.5" />

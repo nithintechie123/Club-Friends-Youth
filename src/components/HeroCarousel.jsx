@@ -62,38 +62,38 @@ export default function HeroCarousel({ onImageClick, onOpenPooja }) {
 
   return (
     <div 
-      className="relative rounded-3xl overflow-hidden festive-card gold-glow-border shadow-2xl group"
+      className="relative rounded-3xl overflow-hidden bg-white border-2 border-amber-300 shadow-xl shadow-amber-900/10 group"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
       {/* Decorative Golden Corner Accents */}
-      <div className="absolute top-2 left-2 text-yellow-300 text-xs font-serif z-20 pointer-events-none drop-shadow">☸</div>
-      <div className="absolute top-2 right-2 text-yellow-300 text-xs font-serif z-20 pointer-events-none drop-shadow">☸</div>
+      <div className="absolute top-2 left-2.5 text-amber-500 text-xs font-serif z-20 pointer-events-none drop-shadow">☸</div>
+      <div className="absolute top-2 right-2.5 text-amber-500 text-xs font-serif z-20 pointer-events-none drop-shadow">☸</div>
 
-      {/* Main Slide Presentation Stage */}
+      {/* Main Slide Presentation Stage - Clean Light Festive Backdrop */}
       <div 
-        className="relative h-96 w-full cursor-pointer overflow-hidden bg-gradient-to-b from-[#1a0604] via-black to-[#220704] flex items-center justify-center"
+        className="relative h-96 w-full cursor-pointer overflow-hidden bg-gradient-to-b from-[#fffbeb] via-[#fef3c7] to-[#fff7ed] flex items-center justify-center p-1"
         onClick={() => onImageClick?.(currentSlide.image, currentSlide.title, currentSlide.caption)}
       >
         <img
           key={currentSlide.id}
           src={currentSlide.image}
           alt={currentSlide.title}
-          className="w-full h-full object-contain transition-all duration-700 animate-in fade-in zoom-in-95 drop-shadow-2xl"
+          className="w-full h-full object-contain transition-all duration-700 animate-in fade-in zoom-in-95 drop-shadow-xl"
         />
 
-        {/* Radiant Vignette Overlay for Crisp Readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1b0604] via-transparent to-black/40 pointer-events-none"></div>
+        {/* Subtle Light Gradient on Bottom for Title Readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#fff8e7]/95 via-transparent to-black/15 pointer-events-none"></div>
 
         {/* Top Badges */}
         <div className="absolute top-3.5 inset-x-4 flex items-center justify-between z-10 pointer-events-none">
-          <span className="flex items-center gap-1.5 bg-gradient-to-r from-red-600 to-orange-600 text-white font-extrabold text-[10px] px-3 py-1 rounded-full shadow-lg border border-yellow-300/60 tracking-wider">
+          <span className="flex items-center gap-1.5 bg-gradient-to-r from-red-600 to-orange-600 text-white font-extrabold text-[10px] px-3 py-1 rounded-full shadow-md border border-white/60 tracking-wider">
             <span className="w-2 h-2 rounded-full bg-white animate-ping"></span>
             {currentSlide.tag}
           </span>
-          <span className="bg-black/80 backdrop-blur-md text-yellow-300 text-[10px] font-mono font-extrabold px-3 py-1 rounded-full border border-yellow-400/50 shadow-md">
+          <span className="bg-white/90 backdrop-blur-md text-[#9a3412] text-[10px] font-mono font-extrabold px-3 py-1 rounded-full border border-amber-300 shadow-sm">
             {currentIndex + 1} / {HERO_CAROUSEL_SLIDES.length}
           </span>
         </div>
@@ -101,7 +101,7 @@ export default function HeroCarousel({ onImageClick, onOpenPooja }) {
         {/* Navigation Buttons */}
         <button
           onClick={(e) => { e.stopPropagation(); handlePrev(); }}
-          className="absolute left-2.5 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/80 text-yellow-300 hover:bg-amber-600 hover:text-white transition-all border border-yellow-400/50 active:scale-90 z-20 shadow-xl"
+          className="absolute left-2.5 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/90 text-amber-900 hover:bg-amber-500 hover:text-white transition-all border border-amber-300 active:scale-90 z-20 shadow-lg"
           aria-label="Previous Banner"
         >
           <ChevronLeft className="w-5 h-5" />
@@ -109,38 +109,38 @@ export default function HeroCarousel({ onImageClick, onOpenPooja }) {
 
         <button
           onClick={(e) => { e.stopPropagation(); handleNext(); }}
-          className="absolute right-2.5 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/80 text-yellow-300 hover:bg-amber-600 hover:text-white transition-all border border-yellow-400/50 active:scale-90 z-20 shadow-xl"
+          className="absolute right-2.5 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/90 text-amber-900 hover:bg-amber-500 hover:text-white transition-all border border-amber-300 active:scale-90 z-20 shadow-lg"
           aria-label="Next Banner"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
 
         {/* Zoom Hint Icon */}
-        <div className="absolute top-3.5 right-16 p-1 rounded-full bg-black/60 text-yellow-300 border border-yellow-400/40 pointer-events-none">
+        <div className="absolute top-3.5 right-16 p-1.5 rounded-full bg-white/80 text-amber-800 border border-amber-300 pointer-events-none shadow-sm">
           <ZoomIn className="w-3.5 h-3.5" />
         </div>
 
         {/* Title & Subtitle Banner */}
         <div className="absolute bottom-3 left-4 right-4 z-10 pointer-events-none">
-          <h2 className="text-xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-amber-300 to-yellow-100 font-['Cinzel',serif] tracking-wide drop-shadow-md">
+          <h2 className="text-xl font-black text-[#7c2d12] font-['Cinzel',serif] tracking-wide drop-shadow-sm">
             {currentSlide.title}
           </h2>
-          <p className="text-xs text-amber-200 font-semibold line-clamp-1 drop-shadow-sm mt-0.5">
+          <p className="text-xs text-[#9a3412] font-bold line-clamp-1 mt-0.5">
             {currentSlide.subtitle}
           </p>
         </div>
       </div>
 
-      {/* Golden Glowing Navigation Dots */}
-      <div className="flex items-center justify-center gap-1.5 py-2.5 bg-[#1b0604] border-t border-amber-400/20">
+      {/* Slide Navigation Dots */}
+      <div className="flex items-center justify-center gap-1.5 py-2.5 bg-[#fffdfa] border-t border-amber-200">
         {HERO_CAROUSEL_SLIDES.map((slide, idx) => (
           <button
             key={slide.id}
             onClick={() => setCurrentIndex(idx)}
             className={`transition-all duration-300 rounded-full ${
               currentIndex === idx
-                ? 'w-7 h-2.5 bg-gradient-to-r from-yellow-300 via-amber-400 to-orange-500 shadow-md shadow-amber-400/60'
-                : 'w-2 h-2 bg-stone-700 hover:bg-stone-500'
+                ? 'w-7 h-2.5 bg-gradient-to-r from-amber-500 to-orange-600 shadow-md shadow-orange-500/40'
+                : 'w-2 h-2 bg-amber-200 hover:bg-amber-400'
             }`}
             aria-label={`Go to slide ${idx + 1}`}
           />
@@ -148,10 +148,10 @@ export default function HeroCarousel({ onImageClick, onOpenPooja }) {
       </div>
 
       {/* Action Tray */}
-      <div className="p-3 bg-gradient-to-b from-[#1b0604] to-[#280905] border-t border-amber-400/30 flex items-center justify-between gap-2">
+      <div className="p-3 bg-gradient-to-r from-[#fffbf0] via-white to-[#fffbf0] border-t border-amber-200 flex items-center justify-between gap-2.5">
         <button
           onClick={onOpenPooja}
-          className="flex-1 btn-festive-primary text-xs py-2.5 px-3 rounded-xl shadow-lg flex items-center justify-center gap-1.5 active:scale-95 transition-all"
+          className="flex-1 btn-festive-primary text-xs py-2.5 px-3 rounded-xl shadow-md flex items-center justify-center gap-1.5 active:scale-95 transition-all"
         >
           <Sparkles className="w-4 h-4 text-yellow-200 animate-spin" />
           <span>Offer Virtual Pooja</span>
@@ -159,19 +159,19 @@ export default function HeroCarousel({ onImageClick, onOpenPooja }) {
 
         <button
           onClick={handleLike}
-          className={`p-2.5 rounded-xl border flex items-center gap-1 text-xs font-bold transition-all ${
+          className={`p-2.5 rounded-xl border-1.5 flex items-center gap-1 text-xs font-bold transition-all ${
             likedSlides[currentIndex]
-              ? 'bg-red-950 text-red-300 border-red-500 shadow-sm shadow-red-500/30'
-              : 'bg-black/50 text-amber-200 border-amber-500/40 hover:bg-black/70'
+              ? 'bg-red-50 text-red-600 border-red-300 shadow-sm'
+              : 'bg-white text-stone-700 border-stone-200 hover:bg-amber-50 hover:text-amber-800'
           }`}
         >
-          <Heart className={`w-4 h-4 ${likedSlides[currentIndex] ? 'text-red-500 fill-red-500' : ''}`} />
+          <Heart className={`w-4 h-4 ${likedSlides[currentIndex] ? 'text-red-600 fill-red-600' : ''}`} />
           <span>{likes[currentIndex] || 250}</span>
         </button>
 
         <button
           onClick={handleShare}
-          className="p-2.5 rounded-xl border border-amber-500/40 bg-black/50 text-amber-300 hover:bg-amber-600 hover:text-white transition-colors"
+          className="p-2.5 rounded-xl border-1.5 border-emerald-300 bg-emerald-50 text-emerald-800 hover:bg-emerald-600 hover:text-white transition-colors"
           title="Share on WhatsApp"
         >
           <Share2 className="w-4 h-4" />

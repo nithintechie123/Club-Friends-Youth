@@ -94,10 +94,10 @@ export default function SevaSection() {
       {/* Section Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-amber-300 to-yellow-100 font-['Cinzel',serif]">
+          <h2 className="text-lg font-black text-[#7c2d12] font-['Cinzel',serif]">
             Seva Offerings & Hundi
           </h2>
-          <p className="text-[11px] text-amber-200 font-medium">
+          <p className="text-[11px] text-amber-900 font-semibold">
             Contribute to Annadanam & Poojas, receive sacred digital blessings
           </p>
         </div>
@@ -108,22 +108,22 @@ export default function SevaSection() {
         {SEVA_TYPES.map((seva) => (
           <div
             key={seva.id}
-            className="festive-card rounded-2xl p-4 shadow-xl flex items-center justify-between gap-3 border-2 border-amber-400/40 hover:border-yellow-300 transition-all"
+            className="bg-white rounded-3xl p-4 shadow-md flex items-center justify-between gap-3 border-2 border-amber-200 hover:border-amber-400 hover:shadow-xl transition-all"
           >
             <div className="flex items-start gap-3">
-              <span className="text-2xl p-2.5 rounded-2xl bg-gradient-to-br from-amber-500/20 to-red-500/20 border border-yellow-300/40 shadow-md">
+              <span className="text-2xl p-2.5 rounded-2xl bg-amber-50 border border-amber-200 shadow-sm">
                 {seva.icon}
               </span>
               <div>
                 <div className="flex items-center gap-2">
-                  <h3 className="text-xs font-extrabold text-amber-100 font-['Cinzel',serif]">
+                  <h3 className="text-xs font-black text-[#431407] font-['Cinzel',serif]">
                     {seva.title}
                   </h3>
-                  <span className="text-[11px] font-extrabold text-stone-950 bg-gradient-to-r from-yellow-300 to-amber-400 px-2 py-0.5 rounded-lg shadow-sm border border-white">
+                  <span className="text-[11px] font-black text-amber-900 bg-amber-100 px-2.5 py-0.5 rounded-lg border border-amber-300">
                     {seva.amount}
                   </span>
                 </div>
-                <p className="text-[10px] text-amber-200/90 font-medium mt-1 leading-snug">
+                <p className="text-[10px] text-stone-600 font-medium mt-1 leading-snug">
                   {seva.description}
                 </p>
               </div>
@@ -131,7 +131,7 @@ export default function SevaSection() {
 
             <button
               onClick={() => handleOpenSeva(seva)}
-              className="btn-festive-primary text-xs px-3.5 py-2 rounded-xl shadow-lg whitespace-nowrap active:scale-95 transition-transform"
+              className="btn-festive-primary text-xs px-3.5 py-2 rounded-xl shadow-md whitespace-nowrap active:scale-95 transition-transform"
             >
               Book Seva
             </button>
@@ -140,28 +140,28 @@ export default function SevaSection() {
       </div>
 
       {/* Sponsors & Annadatas Honor Roll */}
-      <div className="festive-card rounded-2xl p-4 shadow-2xl gold-glow-border">
-        <div className="flex items-center gap-2.5 pb-3 border-b border-amber-400/30">
-          <div className="p-1.5 rounded-lg bg-yellow-400/20 text-yellow-300 border border-yellow-400/40">
-            <Award className="w-4 h-4 text-yellow-300" />
+      <div className="bg-white rounded-3xl p-4.5 shadow-xl border-2 border-amber-300">
+        <div className="flex items-center gap-2.5 pb-3 border-b border-amber-200">
+          <div className="p-1.5 rounded-xl bg-amber-100 text-amber-800 border border-amber-300">
+            <Award className="w-4 h-4 text-amber-700" />
           </div>
-          <h3 className="text-sm font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-amber-400 font-['Cinzel',serif]">
+          <h3 className="text-sm font-black text-[#7c2d12] font-['Cinzel',serif]">
             Maha Annadata & Sponsor Honors
           </h3>
         </div>
 
-        <div className="divide-y divide-amber-400/15 mt-2">
+        <div className="divide-y divide-amber-100 mt-2">
           {DONOR_HONORS.map((donor, idx) => (
-            <div key={idx} className="py-2.5 flex items-center justify-between text-xs hover:bg-black/20 px-1 rounded-lg transition-colors">
+            <div key={idx} className="py-2.5 flex items-center justify-between text-xs hover:bg-amber-50/50 px-1 rounded-xl transition-colors">
               <div>
-                <h4 className="font-extrabold text-white">{donor.name}</h4>
-                <div className="flex items-center gap-2 text-[10px] text-amber-200 font-medium mt-0.5">
-                  <span className="text-yellow-400 font-bold">{donor.title}</span>
+                <h4 className="font-extrabold text-[#2b0d06]">{donor.name}</h4>
+                <div className="flex items-center gap-2 text-[10px] text-amber-900 font-medium mt-0.5">
+                  <span className="text-orange-700 font-bold">{donor.title}</span>
                   <span>•</span>
                   <span>{donor.purpose}</span>
                 </div>
               </div>
-              <span className="font-mono font-extrabold text-yellow-300 bg-gradient-to-r from-black/80 to-amber-950 px-2.5 py-1 rounded-lg border border-yellow-400/40 shadow-sm">
+              <span className="font-mono font-black text-[#7c2d12] bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 shadow-sm">
                 {donor.amount}
               </span>
             </div>
@@ -171,26 +171,26 @@ export default function SevaSection() {
 
       {/* Seva Booking Modal */}
       {selectedSeva && !showCertificate && (
-        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-gradient-to-b from-[#2e0e0a] via-[#1e0705] to-[#280a07] border-2 border-yellow-300 rounded-3xl w-full max-w-sm p-4.5 shadow-2xl relative animate-in fade-in zoom-in-95">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-gradient-to-b from-[#fffbf0] via-white to-[#fff8e7] border-2 border-amber-400 rounded-3xl w-full max-w-sm p-4.5 shadow-2xl relative animate-in fade-in zoom-in-95">
             <button
               onClick={() => setSelectedSeva(null)}
-              className="absolute top-3 right-3 p-1.5 rounded-full bg-black/60 text-yellow-300 hover:text-white"
+              className="absolute top-3 right-3 p-1.5 rounded-full bg-stone-100 text-stone-600 hover:text-stone-900 border border-stone-200"
             >
               <X className="w-4 h-4" />
             </button>
 
-            <div className="text-center pb-3 border-b border-amber-400/30">
+            <div className="text-center pb-3 border-b border-amber-200">
               <span className="text-3xl">{selectedSeva.icon}</span>
-              <h3 className="text-sm font-extrabold text-yellow-200 font-['Cinzel',serif] mt-1">
+              <h3 className="text-sm font-black text-[#7c2d12] font-['Cinzel',serif] mt-1">
                 {selectedSeva.title}
               </h3>
-              <p className="text-[11px] text-amber-200">Club Friends Youth, Pipri Pandal</p>
+              <p className="text-[11px] text-amber-800 font-semibold">Club Friends Youth, Pipri Pandal</p>
             </div>
 
             <form onSubmit={handleConfirmDonation} className="space-y-3 mt-3.5">
               <div>
-                <label className="text-[10px] text-yellow-300 font-bold block mb-1">
+                <label className="text-[10px] text-[#7c2d12] font-black block mb-1">
                   Devotee / Family Head Name *
                 </label>
                 <input
@@ -199,13 +199,13 @@ export default function SevaSection() {
                   value={devoteeName}
                   onChange={(e) => setDevoteeName(e.target.value)}
                   placeholder="e.g. Sri Ramesh & Family"
-                  className="w-full bg-black/60 border border-amber-400/50 rounded-xl px-3 py-2 text-xs text-amber-100 focus:border-yellow-300 focus:outline-none"
+                  className="w-full bg-white border border-amber-300 rounded-xl px-3 py-2 text-xs text-stone-900 focus:border-orange-500 focus:outline-none shadow-sm"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-2">
                 <div>
-                  <label className="text-[10px] text-yellow-300 font-bold block mb-1">
+                  <label className="text-[10px] text-[#7c2d12] font-black block mb-1">
                     Gothram / Nakshatram
                   </label>
                   <input
@@ -213,11 +213,11 @@ export default function SevaSection() {
                     value={gothram}
                     onChange={(e) => setGothram(e.target.value)}
                     placeholder="e.g. Shiva, Kashyapa"
-                    className="w-full bg-black/60 border border-amber-400/50 rounded-xl px-3 py-2 text-xs text-amber-100 focus:border-yellow-300 focus:outline-none"
+                    className="w-full bg-white border border-amber-300 rounded-xl px-3 py-2 text-xs text-stone-900 focus:border-orange-500 focus:outline-none shadow-sm"
                   />
                 </div>
                 <div>
-                  <label className="text-[10px] text-yellow-300 font-bold block mb-1">
+                  <label className="text-[10px] text-[#7c2d12] font-black block mb-1">
                     Offering Amount (₹)
                   </label>
                   <input
@@ -225,30 +225,30 @@ export default function SevaSection() {
                     required
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
-                    className="w-full bg-black/60 border border-amber-400/50 rounded-xl px-3 py-2 text-xs text-yellow-300 font-mono font-bold focus:border-yellow-300 focus:outline-none"
+                    className="w-full bg-white border border-amber-300 rounded-xl px-3 py-2 text-xs text-[#7c2d12] font-mono font-black focus:border-orange-500 focus:outline-none shadow-sm"
                   />
                 </div>
               </div>
 
               {/* Digital UPI QR Preview Simulation */}
-              <div className="bg-black/50 border border-amber-400/30 rounded-xl p-3 flex items-center justify-between">
+              <div className="bg-amber-50 border border-amber-200 rounded-2xl p-3 flex items-center justify-between shadow-inner">
                 <div className="flex items-center gap-2.5">
-                  <div className="p-2 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg text-stone-950 font-bold shadow-md">
+                  <div className="p-2 bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl text-white font-bold shadow-md">
                     <QrCode className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-amber-100">UPI / Pandal Hundi</p>
-                    <p className="text-[10px] text-amber-300/80">GPay, PhonePe, Paytm</p>
+                    <p className="text-xs font-bold text-[#431407]">UPI / Pandal Hundi</p>
+                    <p className="text-[10px] text-amber-800">GPay, PhonePe, Paytm</p>
                   </div>
                 </div>
-                <span className="text-xs font-mono font-extrabold text-yellow-300">
+                <span className="text-xs font-mono font-black text-[#7c2d12]">
                   ₹ {amount}
                 </span>
               </div>
 
               <button
                 type="submit"
-                className="w-full btn-festive-primary text-xs py-2.5 rounded-xl shadow-xl flex items-center justify-center gap-1.5 active:scale-95 transition-all"
+                className="w-full btn-festive-primary text-xs py-2.5 rounded-xl shadow-lg flex items-center justify-center gap-1.5 active:scale-95 transition-all"
               >
                 <Sparkles className="w-3.5 h-3.5 text-yellow-200" />
                 <span>Confirm & Generate Digital Receipt</span>
@@ -258,58 +258,58 @@ export default function SevaSection() {
         </div>
       )}
 
-      {/* Digital Blessing Receipt Card Modal */}
+      {/* Digital Blessing Receipt Card Modal - Light Sandalwood Style */}
       {showCertificate && receiptData && (
-        <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="bg-gradient-to-b from-[#320f0b] via-[#200806] to-[#320f0b] border-2 border-yellow-300 rounded-3xl w-full max-w-sm p-5 shadow-2xl relative animate-in fade-in zoom-in-90">
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4">
+          <div className="bg-gradient-to-b from-[#fffbf0] via-white to-[#fff8e7] border-3 border-amber-400 rounded-3xl w-full max-w-sm p-5 shadow-2xl relative animate-in fade-in zoom-in-90">
             {/* Traditional Corner Accents */}
-            <div className="absolute top-2.5 left-2.5 text-yellow-300 text-sm">☸</div>
-            <div className="absolute top-2.5 right-2.5 text-yellow-300 text-sm">☸</div>
-            <div className="absolute bottom-2.5 left-2.5 text-yellow-300 text-sm">☸</div>
-            <div className="absolute bottom-2.5 right-2.5 text-yellow-300 text-sm">☸</div>
+            <div className="absolute top-2.5 left-2.5 text-amber-600 text-sm">☸</div>
+            <div className="absolute top-2.5 right-2.5 text-amber-600 text-sm">☸</div>
+            <div className="absolute bottom-2.5 left-2.5 text-amber-600 text-sm">☸</div>
+            <div className="absolute bottom-2.5 right-2.5 text-amber-600 text-sm">☸</div>
 
-            <div className="text-center border-b-2 border-amber-400/40 pb-3">
-              <span className="text-xs font-serif text-yellow-300 font-extrabold">॥ శ్రీ గణేశాయ నమః ॥</span>
-              <h3 className="text-base font-extrabold text-white font-['Cinzel',serif] tracking-wider mt-1">
+            <div className="text-center border-b-2 border-amber-200 pb-3">
+              <span className="text-xs font-serif text-[#7c2d12] font-black">॥ శ్రీ గణేశాయ నమః ॥</span>
+              <h3 className="text-base font-black text-[#431407] font-['Cinzel',serif] tracking-wider mt-1">
                 {FESTIVAL_INFO.clubName}
               </h3>
-              <p className="text-[10px] text-amber-200">Pipri Village Ganesh Utsav Official Seva Receipt</p>
+              <p className="text-[10px] text-amber-800 font-semibold">Pipri Village Ganesh Utsav Official Seva Receipt</p>
             </div>
 
-            <div className="my-4 space-y-2 text-xs bg-black/60 p-3.5 rounded-2xl border border-amber-400/30">
+            <div className="my-4 space-y-2 text-xs bg-amber-50/80 p-4 rounded-2xl border border-amber-200 shadow-inner">
               <div className="flex justify-between">
-                <span className="text-amber-200">Receipt No:</span>
-                <span className="font-mono font-bold text-yellow-300">{receiptData.receiptNo}</span>
+                <span className="text-stone-600">Receipt No:</span>
+                <span className="font-mono font-bold text-[#7c2d12]">{receiptData.receiptNo}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-amber-200">Devotee Name:</span>
-                <span className="font-extrabold text-white">{receiptData.name}</span>
+                <span className="text-stone-600">Devotee Name:</span>
+                <span className="font-black text-stone-900">{receiptData.name}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-amber-200">Gothram:</span>
-                <span className="font-semibold text-amber-100">{receiptData.gothram}</span>
+                <span className="text-stone-600">Gothram:</span>
+                <span className="font-semibold text-stone-800">{receiptData.gothram}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-amber-200">Seva Category:</span>
-                <span className="font-semibold text-amber-100">{receiptData.sevaName}</span>
+                <span className="text-stone-600">Seva Category:</span>
+                <span className="font-semibold text-stone-800">{receiptData.sevaName}</span>
               </div>
-              <div className="flex justify-between border-t border-amber-400/30 pt-1.5">
-                <span className="text-amber-200">Contribution:</span>
-                <span className="font-mono font-extrabold text-yellow-300 text-sm">₹ {receiptData.amount}</span>
+              <div className="flex justify-between border-t border-amber-200 pt-1.5">
+                <span className="text-stone-600">Contribution:</span>
+                <span className="font-mono font-black text-[#7c2d12] text-sm">₹ {receiptData.amount}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-amber-200">Date:</span>
-                <span className="text-amber-100">{receiptData.date}</span>
+                <span className="text-stone-600">Date:</span>
+                <span className="text-stone-800 font-medium">{receiptData.date}</span>
               </div>
             </div>
 
-            <div className="text-center text-[10px] text-yellow-200 italic mb-4 font-medium">
+            <div className="text-center text-[10px] text-amber-900 italic mb-4 font-semibold">
               "May Lord Vigneswara shower auspicious health, wisdom and prosperity upon your entire family."
             </div>
 
             <button
               onClick={closeReceipt}
-              className="w-full btn-festive-primary text-xs py-2.5 rounded-xl shadow-xl active:scale-95 transition-transform"
+              className="w-full btn-festive-primary text-xs py-2.5 rounded-xl shadow-lg active:scale-95 transition-transform"
             >
               Close & Receive Blessings 🙏
             </button>

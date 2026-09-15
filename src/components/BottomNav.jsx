@@ -12,7 +12,7 @@ export default function BottomNav({ activeTab, setActiveTab }) {
   ];
 
   return (
-    <nav className="fixed bottom-0 inset-x-0 z-40 bg-gradient-to-t from-[#160402] via-[#220704]/95 to-[#2c0a06]/90 backdrop-blur-xl border-t-2 border-amber-400/40 shadow-2xl py-1 px-2">
+    <nav className="fixed bottom-0 inset-x-0 z-40 bg-white/95 backdrop-blur-xl border-t-2 border-amber-300/80 shadow-[0_-8px_25px_rgba(180,83,9,0.12)] py-1.5 px-2">
       <div className="max-w-md mx-auto flex items-center justify-around">
         {navItems.map((item) => {
           const Icon = item.icon;
@@ -23,17 +23,17 @@ export default function BottomNav({ activeTab, setActiveTab }) {
               <button
                 key={item.id}
                 onClick={() => setActiveTab(item.id)}
-                className="relative -top-4 flex flex-col items-center group focus:outline-none"
+                className="relative -top-5 flex flex-col items-center group focus:outline-none"
               >
-                <div className={`w-13 h-13 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 ${
+                <div className={`w-14 h-14 rounded-full flex items-center justify-center shadow-xl transition-all duration-300 ${
                   isActive
-                    ? 'bg-gradient-to-tr from-yellow-300 via-amber-400 to-orange-600 text-stone-950 scale-110 shadow-amber-400/80 ring-4 ring-yellow-300 animate-aura'
-                    : 'bg-gradient-to-tr from-orange-500 via-amber-600 to-red-600 text-white shadow-orange-950/90 group-hover:scale-105 border-2 border-yellow-300/80'
+                    ? 'bg-gradient-to-tr from-amber-500 via-orange-500 to-yellow-400 text-white scale-110 shadow-orange-500/50 ring-4 ring-amber-300 animate-aura'
+                    : 'bg-gradient-to-tr from-orange-500 via-amber-600 to-red-600 text-white shadow-orange-900/30 group-hover:scale-105 border-2 border-amber-200'
                 }`}>
-                  <Icon className="w-6 h-6 animate-pulse" />
+                  <Icon className="w-6 h-6 animate-pulse text-white drop-shadow" />
                 </div>
-                <span className={`text-[10px] font-extrabold mt-0.5 tracking-tight ${
-                  isActive ? 'text-yellow-300' : 'text-amber-200'
+                <span className={`text-[10px] font-black mt-0.5 tracking-tight ${
+                  isActive ? 'text-amber-900' : 'text-amber-800'
                 }`}>
                   {item.label}
                 </span>
@@ -45,19 +45,19 @@ export default function BottomNav({ activeTab, setActiveTab }) {
             <button
               key={item.id}
               onClick={() => setActiveTab(item.id)}
-              className={`flex flex-col items-center py-1.5 px-2.5 rounded-xl transition-all ${
+              className={`flex flex-col items-center py-1 px-2.5 rounded-xl transition-all ${
                 isActive
-                  ? 'text-yellow-300 font-extrabold scale-110 bg-amber-500/15 border border-amber-400/40 shadow-sm'
-                  : 'text-amber-200/70 hover:text-amber-100'
+                  ? 'text-amber-900 font-black scale-105 bg-amber-100/90 border border-amber-300/80 shadow-sm'
+                  : 'text-stone-600 hover:text-amber-700 font-bold'
               }`}
             >
               <div className="relative">
-                <Icon className={`w-4 h-4 ${isActive ? 'stroke-[2.5] text-yellow-300' : ''}`} />
+                <Icon className={`w-4 h-4 ${isActive ? 'stroke-[2.8] text-amber-700' : ''}`} />
                 {isActive && (
-                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-yellow-300 rounded-full shadow-sm shadow-yellow-300"></span>
+                  <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-amber-600 rounded-full shadow-sm"></span>
                 )}
               </div>
-              <span className="text-[10px] mt-1 font-semibold">{item.label}</span>
+              <span className="text-[10px] mt-0.5 font-bold">{item.label}</span>
             </button>
           );
         })}
@@ -65,3 +65,4 @@ export default function BottomNav({ activeTab, setActiveTab }) {
     </nav>
   );
 }
+

@@ -57,7 +57,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen text-amber-50 flex flex-col font-['Outfit',sans-serif] selection:bg-amber-500 selection:text-black">
+    <div className="min-h-screen text-[#2b0d06] flex flex-col font-['Outfit',sans-serif] selection:bg-amber-300 selection:text-[#2b0d06]">
       {/* Intro Animated Splash Screen with Official Youth Logo */}
       {showSplash && (
         <SplashScreen onFinish={() => setShowSplash(false)} />
@@ -70,7 +70,7 @@ export default function App() {
       />
 
       {/* Main Content Area - Mobile Optimized Max-W */}
-      <main className="flex-1 max-w-md w-full mx-auto px-3.5 pt-3 pb-24 space-y-4">
+      <main className="flex-1 max-w-md w-full mx-auto px-3.5 pt-3.5 pb-24 space-y-4.5">
         {/* Active Tab View Rendering */}
         {activeTab === 'darshan' && (
           <DarshanSection
@@ -105,19 +105,19 @@ export default function App() {
 
         {/* Quick Committee / About Tab Switcher Banner */}
         {activeTab !== 'about' && (
-          <div className="festive-card rounded-2xl p-3.5 flex items-center justify-between mt-6 border-2 border-amber-400/40">
-            <div className="flex items-center gap-2.5">
-              <div className="p-2 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-600 text-stone-950 font-bold shadow-md">
+          <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-2xl p-4 flex items-center justify-between mt-6 border-1.5 border-amber-300 shadow-md">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 text-white font-bold shadow-md">
                 <Shield className="w-4 h-4" />
               </div>
               <div>
-                <h4 className="text-xs font-extrabold text-white">Club Friends Youth Committee</h4>
-                <p className="text-[10px] text-yellow-300">Pipri village team, contacts & location</p>
+                <h4 className="text-xs font-extrabold text-[#7c2d12]">Club Friends Youth Committee</h4>
+                <p className="text-[11px] text-amber-800 font-medium">Pipri village team, contacts & location</p>
               </div>
             </div>
             <button
               onClick={() => setActiveTab('about')}
-              className="btn-festive-primary text-[11px] px-3 py-1.5 rounded-xl active:scale-95 transition-all shadow-md"
+              className="btn-festive-primary text-[11px] px-3.5 py-1.5 rounded-xl active:scale-95 transition-all shadow-md"
             >
               Contacts
             </button>
@@ -125,14 +125,14 @@ export default function App() {
         )}
 
         {/* Footer Devotional Chant */}
-        <footer className="pt-4 pb-2 text-center text-xs text-amber-200/70 space-y-1">
-          <p className="font-serif tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-amber-300 to-yellow-100 text-sm font-extrabold drop-shadow">
+        <footer className="pt-4 pb-2 text-center text-xs text-amber-900/70 space-y-1">
+          <p className="font-serif tracking-widest text-[#9a3412] text-sm font-extrabold drop-shadow-sm">
             ॥ గణపతి బప్పా మోరియా • మంగళ మూర్తి మోరియా ॥
           </p>
-          <p className="text-[11px] text-yellow-400/90 font-bold">
+          <p className="text-[11px] text-amber-900 font-bold">
             © {new Date().getFullYear()} {FESTIVAL_INFO.clubName} • {FESTIVAL_INFO.landmark}, {FESTIVAL_INFO.village}
           </p>
-          <p className="text-[10px] text-stone-400">
+          <p className="text-[10px] text-stone-500">
             Handcrafted with devotion for village community & devotees worldwide
           </p>
         </footer>
@@ -140,7 +140,7 @@ export default function App() {
 
       {/* Floating Modal for Virtual Pooja (When clicked from Header/Button) */}
       {isPoojaModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-3 overflow-y-auto">
+        <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 overflow-y-auto">
           <div className="w-full max-w-md my-auto">
             <VirtualPooja onClose={() => setIsPoojaModalOpen(false)} />
           </div>

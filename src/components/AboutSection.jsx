@@ -17,39 +17,39 @@ export default function AboutSection() {
     <div className="space-y-4">
       {/* Section Header */}
       <div>
-        <h2 className="text-lg font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 via-amber-300 to-yellow-100 font-['Cinzel',serif]">
+        <h2 className="text-lg font-black text-[#7c2d12] font-['Cinzel',serif]">
           About {FESTIVAL_INFO.clubName}
         </h2>
-        <p className="text-[11px] text-amber-200 font-medium">
+        <p className="text-[11px] text-amber-900 font-semibold">
           Dedicated village youth uniting Pipri through devotion, seva & friendship
         </p>
       </div>
 
       {/* Story & Mission Card */}
-      <div className="festive-card rounded-2xl p-4 shadow-xl space-y-3 gold-glow-border">
-        <div className="flex items-center gap-2 pb-2 border-b border-amber-400/30">
-          <Shield className="w-4 h-4 text-yellow-300" />
-          <h3 className="text-xs font-extrabold text-yellow-300 uppercase tracking-wider">
+      <div className="bg-white rounded-3xl p-4.5 shadow-xl border-2 border-amber-300 space-y-3">
+        <div className="flex items-center gap-2 pb-2.5 border-b border-amber-200">
+          <Shield className="w-4 h-4 text-orange-600" />
+          <h3 className="text-xs font-black text-[#7c2d12] uppercase tracking-wider">
             Our Village Tradition & Spirit
           </h3>
         </div>
 
-        <p className="text-xs text-amber-100 leading-relaxed font-medium">
+        <p className="text-xs text-[#2b0d06] leading-relaxed font-medium">
           Established by the youth of Pipri village, <strong>Club Friends Youth</strong> organizes the grand annual Ganesh Mahotsav with sacred traditions, Sunday Maha Annadanam feasts (20/09/2026), cultural talent platforms, and an unforgettable Visarjan procession.
         </p>
 
-        <div className="grid grid-cols-3 gap-2 pt-1 text-center">
-          <div className="bg-black/50 border border-amber-400/30 p-2.5 rounded-xl shadow-inner">
-            <span className="text-base font-extrabold text-yellow-300 font-mono">10+</span>
-            <p className="text-[9px] text-amber-200 font-bold uppercase mt-0.5">Years Utsav</p>
+        <div className="grid grid-cols-3 gap-2.5 pt-1 text-center">
+          <div className="bg-amber-50 border border-amber-200 p-2.5 rounded-2xl shadow-sm">
+            <span className="text-base font-black text-[#7c2d12] font-mono">10+</span>
+            <p className="text-[9px] text-amber-900 font-extrabold uppercase mt-0.5">Years Utsav</p>
           </div>
-          <div className="bg-black/50 border border-amber-400/30 p-2.5 rounded-xl shadow-inner">
-            <span className="text-base font-extrabold text-yellow-300 font-mono">5000+</span>
-            <p className="text-[9px] text-amber-200 font-bold uppercase mt-0.5">Devotees Fed</p>
+          <div className="bg-amber-50 border border-amber-200 p-2.5 rounded-2xl shadow-sm">
+            <span className="text-base font-black text-[#7c2d12] font-mono">5000+</span>
+            <p className="text-[9px] text-amber-900 font-extrabold uppercase mt-0.5">Devotees Fed</p>
           </div>
-          <div className="bg-black/50 border border-amber-400/30 p-2.5 rounded-xl shadow-inner">
-            <span className="text-base font-extrabold text-yellow-300 font-mono">45+</span>
-            <p className="text-[9px] text-amber-200 font-bold uppercase mt-0.5">Volunteers</p>
+          <div className="bg-amber-50 border border-amber-200 p-2.5 rounded-2xl shadow-sm">
+            <span className="text-base font-black text-[#7c2d12] font-mono">45+</span>
+            <p className="text-[9px] text-amber-900 font-extrabold uppercase mt-0.5">Volunteers</p>
           </div>
         </div>
       </div>
@@ -57,8 +57,8 @@ export default function AboutSection() {
       {/* Committee Organizers Directory */}
       <div className="space-y-2.5">
         <div className="flex items-center gap-2">
-          <Users className="w-4 h-4 text-yellow-300" />
-          <h3 className="text-xs font-extrabold text-yellow-300 uppercase tracking-wider">
+          <Users className="w-4 h-4 text-orange-600" />
+          <h3 className="text-xs font-black text-[#7c2d12] uppercase tracking-wider">
             Youth Committee Leads & Contacts
           </h3>
         </div>
@@ -67,27 +67,27 @@ export default function AboutSection() {
           {COMMITTEE_MEMBERS.map((member, idx) => (
             <div
               key={idx}
-              className="bg-gradient-to-r from-[#2a0e0a] to-[#1c0604] border-2 border-amber-400/40 hover:border-yellow-300 rounded-2xl p-3.5 shadow-md flex items-center justify-between gap-2.5 transition-all"
+              className="bg-white border-2 border-amber-200 hover:border-amber-400 rounded-3xl p-3.5 shadow-md flex items-center justify-between gap-2.5 transition-all"
             >
               <div className="flex items-center gap-3">
                 <img
                   src={member.avatar}
                   alt={member.name}
-                  className="w-11 h-11 rounded-full object-cover border-2 border-yellow-300 shadow-md"
+                  className="w-11 h-11 rounded-full object-cover border-2 border-amber-400 shadow-sm"
                 />
                 <div>
-                  <h4 className="text-xs font-extrabold text-white font-['Cinzel',serif]">
+                  <h4 className="text-xs font-black text-[#431407] font-['Cinzel',serif]">
                     {member.name}
                   </h4>
-                  <p className="text-[10px] text-yellow-300 font-bold">{member.role}</p>
-                  <p className="text-[9px] text-amber-200 font-medium">{member.experience}</p>
+                  <p className="text-[10px] text-orange-700 font-bold">{member.role}</p>
+                  <p className="text-[9px] text-stone-500 font-medium">{member.experience}</p>
                 </div>
               </div>
 
               <div className="flex items-center gap-2">
                 <button
                   onClick={() => handleWhatsApp(member)}
-                  className="p-2 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white shadow-md hover:from-emerald-500 active:scale-90 transition-transform"
+                  className="p-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm active:scale-90 transition-transform"
                   title="Chat on WhatsApp"
                 >
                   <MessageCircle className="w-4 h-4" />
@@ -95,7 +95,7 @@ export default function AboutSection() {
 
                 <button
                   onClick={() => handleCall(member.phone)}
-                  className="p-2 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 text-stone-950 shadow-md hover:from-yellow-400 active:scale-90 transition-transform"
+                  className="p-2 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 text-white shadow-sm hover:from-amber-600 active:scale-90 transition-transform"
                   title="Call Organizer"
                 >
                   <Phone className="w-4 h-4 font-bold" />
@@ -107,31 +107,31 @@ export default function AboutSection() {
       </div>
 
       {/* Pandal Location & Visarjan Route Guide */}
-      <div className="festive-card rounded-2xl p-4 shadow-2xl space-y-3 gold-glow-border">
-        <div className="flex items-center gap-2 pb-2 border-b border-amber-400/30">
-          <Compass className="w-4 h-4 text-yellow-300" />
-          <h3 className="text-xs font-extrabold text-yellow-300 uppercase tracking-wider">
+      <div className="bg-white rounded-3xl p-4.5 shadow-xl border-2 border-amber-300 space-y-3">
+        <div className="flex items-center gap-2 pb-2.5 border-b border-amber-200">
+          <Compass className="w-4 h-4 text-orange-600" />
+          <h3 className="text-xs font-black text-[#7c2d12] uppercase tracking-wider">
             Pandal Venue & Nimajjanam Route
           </h3>
         </div>
 
         <div className="text-xs space-y-2.5">
-          <div className="flex items-start gap-3 text-amber-100 bg-black/60 p-3.5 rounded-2xl border border-amber-400/30">
-            <MapPin className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5 animate-bounce" />
+          <div className="flex items-start gap-3 bg-gradient-to-r from-amber-50 to-orange-50 p-3.5 rounded-2xl border border-amber-200">
+            <MapPin className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5 animate-bounce" />
             <div className="space-y-1">
-              <p className="font-extrabold text-white text-xs">{FESTIVAL_INFO.clubName} Pandal</p>
-              <p className="text-[11px] text-yellow-300 font-bold">{FESTIVAL_INFO.landmark}</p>
-              <div className="text-[10px] text-amber-200 grid grid-cols-2 gap-x-2 gap-y-0.5 pt-1 border-t border-amber-400/20 font-semibold">
-                <span>Village: <strong className="text-white">Pipri</strong></span>
-                <span>Mandal: <strong className="text-white">Armoor</strong></span>
-                <span>District: <strong className="text-white">Nizamabad</strong></span>
-                <span>State: <strong className="text-white">Telangana</strong></span>
+              <p className="font-black text-[#7c2d12] text-xs">{FESTIVAL_INFO.clubName} Pandal</p>
+              <p className="text-[11px] text-[#431407] font-bold">{FESTIVAL_INFO.landmark}</p>
+              <div className="text-[10px] text-amber-900 grid grid-cols-2 gap-x-2 gap-y-0.5 pt-1 border-t border-amber-200 font-semibold">
+                <span>Village: <strong className="text-orange-700">Pipri</strong></span>
+                <span>Mandal: <strong className="text-orange-700">Armoor</strong></span>
+                <span>District: <strong className="text-orange-700">Nizamabad</strong></span>
+                <span>State: <strong className="text-orange-700">Telangana</strong></span>
               </div>
             </div>
           </div>
 
-          <div className="bg-black/40 border border-amber-400/20 p-3 rounded-xl text-[11px] text-amber-100">
-            <strong className="text-yellow-300 block mb-0.5">Visarjan Yatra Route (Day 9):</strong>
+          <div className="bg-amber-50/70 border border-amber-200 p-3 rounded-2xl text-[11px] text-[#2b0d06]">
+            <strong className="text-orange-800 block mb-0.5">Visarjan Yatra Route (Day 9):</strong>
             Beside Gram Panchayathi Office ➔ Pipri Main Bazar Road ➔ Temple Circle ➔ Pipri Lake Immersion.
           </div>
         </div>
@@ -140,7 +140,7 @@ export default function AboutSection() {
           href={FESTIVAL_INFO.mapsUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full btn-festive-primary text-xs py-2.5 rounded-xl shadow-xl flex items-center justify-center gap-1.5 active:scale-95 transition-all"
+          className="w-full btn-festive-primary text-xs py-2.5 rounded-xl shadow-md flex items-center justify-center gap-1.5 active:scale-95 transition-all"
         >
           <Navigation className="w-3.5 h-3.5" />
           <span>Open Pipri Pandal in Google Maps</span>
