@@ -27,12 +27,12 @@ export default function Header({ currentAartiCountdown, onOpenPooja }) {
         {/* Logo & Club Branding */}
         <div className="flex items-center gap-2.5">
           <div className="relative">
-            <div className="w-11 h-11 rounded-full bg-gradient-to-tr from-amber-400 via-orange-500 to-red-600 p-0.5 shadow-md shadow-orange-500/30 flex items-center justify-center animate-aura">
-              <div className="w-full h-full rounded-full bg-[#fff8e7] flex items-center justify-center p-1">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-amber-400 via-orange-500 to-red-600 p-0.5 shadow-md shadow-orange-500/30 flex items-center justify-center animate-aura">
+              <div className="w-full h-full rounded-xl bg-black flex items-center justify-center p-0.5 overflow-hidden border border-amber-300">
                 <img 
-                  src="/ganesha-icon.svg" 
-                  alt="Ganesha" 
-                  className="w-8 h-8 object-contain animate-float"
+                  src="/youth-logo-banner.png" 
+                  alt="Club Friends Youth Logo" 
+                  className="w-full h-full object-contain"
                 />
               </div>
             </div>
